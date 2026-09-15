@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iStore Prime | Celulares Seminovos e Usados com Garantia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        storeDark: '#0f172a',
+                        storeBlue: '#2563eb',
+                        storeGreen: '#16a34a',
+                        storeGray: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+    <!-- Top Bar de Benefícios -->
+    <div class="bg-storeDark text-white text-xs py-2 px-4 text-center font-medium">
+        <span>🔥 Mês de Ofertas: <strong class="text-green-400">12% OFF no Pix</strong> • Frete Grátis acima de R$ 1.300 • Garantia de 1 Ano</span>
+    </div>
+
+    <!-- Header / Navegação Principal -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <a href="#" class="text-2xl font-black tracking-tight text-storeDark flex items-center gap-1.5">
+                    <i class="fa-brands fa-apple text-3xl text-storeBlue"></i>
+                    <span>iStore<span class="text-storeBlue">Prime</span></span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex flex-1 max-w-xl mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Buscar por iPhone, modelo, capacidade..." class="w-full bg-gray-100 border border-gray-300 rounded-full py-2.5 pl-5 pr-12 text-sm focus:outline-none focus:border-storeBlue focus:bg-white transition-colors">
+                    <button aria-label="Pesquisar" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-storeBlue">
+                        <i class="fa-solid fa-magnifying-glass text-base"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <a href="#tradein" class="hidden lg:flex items-center gap-2 text-sm font-semibold text-storeBlue hover:underline">
+                    <i class="fa-solid fa-rotate"></i> Vender meu iPhone
+                </a>
+                <!-- Botão do Carrinho que abre a gaveta -->
+                <button onclick="toggleCart()" aria-label="Abrir Carrinho de Compras" class="relative text-gray-700 hover:text-storeBlue transition-colors focus:outline-none">
+                    <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-2 bg-storeBlue text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Submenu de Categorias -->
+    <nav class="bg-gray-50 border-b border-gray-200 py-3">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-start md:justify-center space-x-8 overflow-x-auto text-sm font-semibold text-gray-600">
+            <a href="#iphones" class="flex items-center gap-2 text-storeBlue whitespace-nowrap"><i class="fa-solid fa-mobile-screen"></i> iPhones</a>
+            <a href="#iphones" class="whitespace-nowrap hover:text-storeBlue">iPhone 16 Pro Max</a>
+            <a href="#iphones" class="whitespace-nowrap hover:text-storeBlue">iPhone 15</a>
+            <a href="#iphones" class="whitespace-nowrap hover:text-storeBlue">iPhone 14</a>
+            <a href="#iphones" class="whitespace-nowrap hover:text-storeBlue">iPhone 13</a>
+            <a href="#tradein" class="whitespace-nowrap text-green-600 hover:underline"><i class="fa-solid fa-tag"></i> Quero Trocar</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-slate-900 to-blue-950 text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="max-w-xl text-center md:text-left">
+                <span class="bg-blue-600/30 border border-blue-400/40 text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Certificados e Revisados</span>
+                <h1 class="text-3xl sm:text-5xl font-black mt-4 mb-4 tracking-tight leading-tight">Celulares Apple com 1 ano de garantia e economia real.</h1>
+                <p class="text-gray-300 text-sm sm:text-base mb-8">Mais de 40 itens testados rigorosamente. Compre com segurança e atendimento direto no WhatsApp.</p>
+                <a href="#iphones" class="inline-block bg-storeBlue hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all">Ver Ofertas Disponíveis</a>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=700&auto=format&fit=crop" alt="iPhones" class="rounded-2xl shadow-2xl max-h-80 object-cover border border-white/10">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vitrine de Produtos -->
+    <section id="iphones" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Mais Vendidos em Destaque</h2>
+                <p class="text-gray-500 text-sm mt-1">Escolha o aparelho e adicione ao carrinho para fechar pelo WhatsApp.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-shadow relative">
+                <span class="absolute top-4 left-4 bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-md">Excelente</span>
+                <div>
+                    <div class="h-48 flex items-center justify-center my-4">
+                        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=500&auto=format&fit=crop" alt="iPhone 16 Pro Max" class="max-h-full object-contain">
+                    </div>
+                    <h3 class="font-bold text-base text-gray-900 mb-1 product-name">Apple iPhone 16 Pro Max</h3>
+                    <p class="text-xs text-gray-500 mb-3 product-specs">256GB • Titânio Natural • Bateria 100%</p>
+                </div>
+                <div>
+                    <div class="border-t border-gray-100 pt-3 mb-4">
+                        <span class="text-xs text-gray-400 line-through">R$ 9.499,00</span>
+                        <div class="text-xl font-black text-storeDark">R$ 8.359,00 <span class="text-xs font-bold text-storeGreen">12% OFF Pix</span></div>
+                        <span class="text-xs text-gray-500">ou 12x de R$ 791,50 sem juros</span>
+                    </div>
+                    <button onclick="addCart('Apple iPhone 16 Pro Max (256GB - Titânio)', 8359.00)" class="w-full bg-storeBlue hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-shadow relative">
+                <span class="absolute top-4 left-4 bg-green-100 text-green-800 text-[10px] font-bold px-2.5 py-1 rounded-md">Como Novo</span>
+                <div>
+                    <div class="h-48 flex items-center justify-center my-4">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=500&auto=format&fit=crop" alt="iPhone 15" class="max-h-full object-contain">
+                    </div>
+                    <h3 class="font-bold text-base text-gray-900 mb-1 product-name">Apple iPhone 15</h3>
+                    <p class="text-xs text-gray-500 mb-3 product-specs">128GB • Preto • Bateria 96%</p>
+                </div>
+                <div>
+                    <div class="border-t border-gray-100 pt-3 mb-4">
+                        <span class="text-xs text-gray-400 line-through">R$ 5.299,00</span>
+                        <div class="text-xl font-black text-storeDark">R$ 4.663,00 <span class="text-xs font-bold text-storeGreen">12% OFF Pix</span></div>
+                        <span class="text-xs text-gray-500">ou 12x de R$ 441,50 sem juros</span>
+                    </div>
+                    <button onclick="addCart('Apple iPhone 15 (128GB - Preto)', 4663.00)" class="w-full bg-storeBlue hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-shadow relative">
+                <span class="absolute top-4 left-4 bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-md">Muito Bom</span>
+                <div>
+                    <div class="h-48 flex items-center justify-center my-4">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=500&auto=format&fit=crop" alt="iPhone 14" class="max-h-full object-contain">
+                    </div>
+                    <h3 class="font-bold text-base text-gray-900 mb-1 product-name">Apple iPhone 14</h3>
+                    <p class="text-xs text-gray-500 mb-3 product-specs">128GB • Roxo • Bateria 90%</p>
+                </div>
+                <div>
+                    <div class="border-t border-gray-100 pt-3 mb-4">
+                        <span class="text-xs text-gray-400 line-through">R$ 4.199,00</span>
+                        <div class="text-xl font-black text-storeDark">R$ 3.695,00 <span class="text-xs font-bold text-storeGreen">12% OFF Pix</span></div>
+                        <span class="text-xs text-gray-500">ou 12x de R$ 349,90 sem juros</span>
+                    </div>
+                    <button onclick="addCart('Apple iPhone 14 (128GB - Roxo)', 3695.00)" class="w-full bg-storeBlue hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col justify-between hover:shadow-xl transition-shadow relative">
+                <span class="absolute top-4 left-4 bg-blue-100 text-blue-800 text-[10px] font-bold px-2.5 py-1 rounded-md">Bom Estado</span>
+                <div>
+                    <div class="h-48 flex items-center justify-center my-4">
+                        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=500&auto=format&fit=crop" alt="iPhone 13" class="max-h-full object-contain">
+                    </div>
+                    <h3 class="font-bold text-base text-gray-900 mb-1 product-name">Apple iPhone 13</h3>
+                    <p class="text-xs text-gray-500 mb-3 product-specs">128GB • Estelar • Bateria 88%</p>
+                </div>
+                <div>
+                    <div class="border-t border-gray-100 pt-3 mb-4">
+                        <span class="text-xs text-gray-400 line-through">R$ 3.499,00</span>
+                        <div class="text-xl font-black text-storeDark">R$ 3.079,00 <span class="text-xs font-bold text-storeGreen">12% OFF Pix</span></div>
+                        <span class="text-xs text-gray-500">ou 12x de R$ 291,50 sem juros</span>
+                    </div>
+                    <button onclick="addCart('Apple iPhone 13 (128GB - Estelar)', 3079.00)" class="w-full bg-storeBlue hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco Trade-In -->
+    <section id="tradein" class="bg-blue-50 py-16 border-y border-blue-100">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black text-storeDark mb-3">Quer vender o seu iPhone usado?</h2>
+            <p class="text-gray-600 max-w-xl mx-auto mb-8 text-sm">Receba uma proposta rápida e transforme seu celular antigo em desconto na iStore Prime.</p>
+            <a href="https://wa.me/5551995376751?text=Olá,%20gostaria%20de%20fazer%20uma%20avaliação%20do%20meu%20iPhone%20usado%20para%20troca." target="_blank" class="inline-block bg-storeDark hover:bg-gray-900 text-white font-bold px-8 py-4 rounded-xl shadow-md transition-colors">Fazer Avaliação no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-storeDark text-gray-400 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-lg">
+                <i class="fa-brands fa-apple text-2xl text-storeBlue"></i>
+                <span>iStore Prime</span>
+            </div>
+            <p class="text-xs text-gray-500">© 2026 iStore Prime. Todos os direitos reservados.</p>
+            <div class="flex space-x-6 text-lg">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GAVETA DO CARRINHO DE COMPRAS (SIDEBAR) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <!-- Fundo escuro transparente -->
+        <div class="absolute inset-0 bg-black/50 transition-opacity" onclick="toggleCart()"></div>
+        
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <!-- Topo do Carrinho -->
+                <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50">
+                    <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-storeBlue"></i> Meu Carrinho
+                    </h2>
+                    <button onclick="toggleCart()" class="text-gray-400 hover:text-gray-600 text-xl font-bold p-2">&times;</button>
+                </div>
+
+                <!-- Lista de Produtos no Carrinho -->
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+
+                <!-- Rodapé do Carrinho com Total e Botão WhatsApp -->
+                <div class="border-t border-gray-200 p-6 bg-gray-50">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-base font-medium text-gray-600">Total:</span>
+                        <span id="cart-total" class="text-2xl font-black text-gray-900">R$ 0,00</span>
+                    </div>
+                    <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors text-base">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Finalizar Pedido no WhatsApp
+                    </button>
+                    <p class="text-[11px] text-gray-500 text-center mt-3">O pedido será enviado diretamente para o atendimento da loja.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT DO CARRINHO E WHATSAPP -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function addCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            toggleCart(); // Abre o carrinho automaticamente ao adicionar
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countElem = document.getElementById('cart-count');
+            const itemsElem = document.getElementById('cart-items');
+            const totalElem = document.getElementById('cart-total');
+
+            countElem.innerText = cart.length;
+
+            if (cart.length === 0) {
+                itemsElem.innerHTML = '<p class="text-center text-gray-400 py-12 text-sm">Seu carrinho está vazio.</p>';
+                totalElem.innerText = 'R$ 0,00';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-800">${item.name}</h4>
+                            <span class="text-xs font-semibold text-storeBlue">R$ ${item.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+                        </div>
+                        <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 text-sm p-1"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+
+            itemsElem.innerHTML = html;
+            totalElem.innerText = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+
+            // Número configurado: (51) 99537-6751
+            const phoneNumber = "5551995376751"; 
+
+            let message = "Olá! Gostaria de finalizar o seguinte pedido na iStore Prime:\n\n";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}* - R$ ${item.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}\n`;
+                total += item.price;
+            });
+
+            message += `\n*Total do Pedido: R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}*`;
+            message += `\n\nComo proceder com o pagamento via Pix/Cartão e envio?`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
+</body>
+</html>
